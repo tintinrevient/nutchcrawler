@@ -105,6 +105,16 @@ user:kibana admin$ ./bin/kibana
 Verify if Kibana is started:  
 Visit http://localhost:5601
 
+**Step-by-Step Run Nutch Crawler**
+```
+user:nutchcrawler admin$ bin/nutch inject urls
+user:nutchcrawler admin$ bin/nutch generate -topN 80
+user:nutchcrawler admin$ bin/nutch fetch -all
+user:nutchcrawler admin$ bin/nutch parse -all
+user:nutchcrawler admin$ bin/nutch updatedb -all
+user:nutchcrawler admin$ bin/nutch index -all
+```
+
 **Reference**
 - https://www.mongodb.com/download-center/compass is MongoDB GUI
 - For Elastic Search GUI, you can install Elastic Search plugin as below and then restart and visit this link http://localhost:9200/_plugin/head/:
