@@ -2,7 +2,7 @@
 
 This crawler is based on Apache Nutch 2.3, MongoDB 2.6.7, Elastic Search 1.4.4 and Kibana 4.0.1.
 
-**Nutch Setup**
+## Nutch Setup
 ```
 user:~ admin$ git clone https://github.com/tintinrevient/nutchcrawler.git
 user:~ admin$ cd nutchcrawler
@@ -30,7 +30,7 @@ Update below line to limit the crawled URLs to your expected domain:
 +^https?://([a-z0-9-]+\.)*www\.freundevonfreunden\.com/
 ```
 
-**MongoDB Setup**
+## MongoDB Setup
 ```
 user:~ admin$ cd mongodb
 user:mongodb admin$ mkdir data, conf, log
@@ -56,27 +56,27 @@ storage:
   smallFiles: true
 ```
 
-Start MongoDB:
+### Start MongoDB:
 ```
 user:mongodb admin$ ./bin/mongod -f conf/mongdb.yml 
 ```
 
-Verify if MongoDB is started:
+### Verify if MongoDB is started:
 ```
 user:mongodb admin$ ./bin/mongo
 > show dbs
 admin  (empty)
 ```
 
-**Elastic Search Setup**
+## Elastic Search Setup
 
-Start Elastic Search:
+### Start Elastic Search:
 ```
 user:~ admin$ cd elasticsearch
 user:elasticsearch admin$ ./bin/elasticsearch -d
 ```
 
-Verify if Elastic Search is started:
+### Verify if Elastic Search is started:
 ```
 user:elasticsearch admin$ curl -XGET 'http://localhost:9200'
 {
@@ -94,18 +94,18 @@ user:elasticsearch admin$ curl -XGET 'http://localhost:9200'
 }
 ```
 
-**Kibana Setup**
+## Kibana Setup
 
-Start Kibana:
+### Start Kibana:
 ```
 user:~ admin$ cd kibana
 user:kibana admin$ ./bin/kibana
 ```
 
-Verify if Kibana is started:  
+### Verify if Kibana is started:  
 Visit http://localhost:5601
 
-**Step-by-Step Run Nutch Crawler**
+## Step-by-Step Run Nutch Crawler
 ```
 user:nutchcrawler admin$ bin/nutch inject urls
 user:nutchcrawler admin$ bin/nutch generate -topN 80
@@ -115,7 +115,7 @@ user:nutchcrawler admin$ bin/nutch updatedb -all
 user:nutchcrawler admin$ bin/nutch index -all
 ```
 
-**Reference**
+## Reference
 - https://www.mongodb.com/download-center/compass is MongoDB GUI
 - For Elastic Search GUI, you can install Elastic Search plugin as below and then restart and visit this link http://localhost:9200/_plugin/head/:
 ```
