@@ -105,7 +105,7 @@ user:kibana admin$ ./bin/kibana
 Verify if Kibana is started:  
 Visit http://localhost:5601
 
-** Reference **
+**Reference**
 - https://www.mongodb.com/download-center/compass is MongoDB GUI
 - For Elastic Search GUI, you can install Elastic Search plugin as below and then restart and visit this link http://localhost:9200/_plugin/head/:
 ```
